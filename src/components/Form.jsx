@@ -1,151 +1,185 @@
-import React from 'react'
+import React from "react";
 
-function Form() {
+const Form = () => {
   return (
-    <div className="border-b border-gray-900/10 pb-12">
-    <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-    <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
-    
-    <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-      <div className="sm:col-span-3">
-        <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-          First name
-        </label>
-        <div className="mt-2">
-          <input
-            type="text"
-            name="first-name"
-            id="first-name"
-            autoComplete="given-name"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
+    <div className="flex flex-col justify-center items-center font-body mt-12 pb-12">
+      <h1 className="text-white text-2xl mb-6">Enter Your Car Details</h1>
+      <form className="w-full max-w-lg">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-first-name"
+            >
+              Brand Name
+            </label>
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="grid-first-name"
+              type="text"
+              placeholder="Maruti.."
+            />
+          </div>
+          <div className="w-full md:w-1/2 px-3">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-last-name"
+            >
+              Year of Manufacturing
+            </label>
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-last-name"
+              type="number"
+              placeholder="2010.."
+            />
+          </div>
         </div>
-      </div>
-    
-      <div className="sm:col-span-3">
-        <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-          Last name
-        </label>
-        <div className="mt-2">
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            autoComplete="family-name"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
+        {/*  */}
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-first-name"
+            >
+              Present Price( ₹ in Lakhs)
+            </label>
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="grid-first-name"
+              type="number"
+              placeholder="1.00"
+            />
+          </div>
+          <div className="w-full md:w-1/2 px-3">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-last-name"
+            >
+              Kms Drived
+            </label>
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-last-name"
+              type="number"
+              placeholder="5000.."
+            />
+          </div>
         </div>
-      </div>
-    
-      <div className="sm:col-span-4">
-        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-          Email address
-        </label>
-        <div className="mt-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-    
-      <div className="sm:col-span-3">
-        <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-          Country
-        </label>
-        <div className="mt-2">
-          <select
-            id="country"
-            name="country"
-            autoComplete="country-name"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-          >
-            <option>United States</option>
-            <option>Canada</option>
-            <option>Mexico</option>
-          </select>
-        </div>
-      </div>
-    
-      <div className="col-span-full">
-        <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-          Street address
-        </label>
-        <div className="mt-2">
-          <input
-            type="text"
-            name="street-address"
-            id="street-address"
-            autoComplete="street-address"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-    
-      <div className="sm:col-span-2 sm:col-start-1">
-        <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-          City
-        </label>
-        <div className="mt-2">
-          <input
-            type="text"
-            name="city"
-            id="city"
-            autoComplete="address-level2"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-    
-      <div className="sm:col-span-2">
-        <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
-          State / Province
-        </label>
-        <div className="flex h-6 items-center">
-                    <input
-                      id="offers"
-                      name="offers"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                    />
-                  </div>
-                  <div className="text-sm leading-6">
-                    <label htmlFor="offers" className="font-medium text-gray-900">
-                      Offers
-                    </label>
-                    <p className="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
-                  </div>
-        <div className="mt-2">
-          <input
-            type="text"
-            name="region"
-            id="region"
-            autoComplete="address-level1"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-    
-      <div className="sm:col-span-2">
-        <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-          ZIP / Postal code
-        </label>
-        <div className="mt-2">
-          <input
-            type="text"
-            name="postal-code"
-            id="postal-code"
-            autoComplete="postal-code"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div>
-      </div>
-    </div>
-    </div>
-  )
-}
 
-export default Form
+        <div className="flex flex-wrap justify-center items-center -mx-3 mb-2">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-state"
+            >
+              Owner
+            </label>
+            <div className="relative">
+              <select
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state"
+              >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-state"
+            >
+              Fuel-Type
+            </label>
+            <div className="relative">
+              <select
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state"
+              >
+                <option>Petrol</option>
+                <option>Diesel</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*  */}
+        <div className="flex flex-wrap justify-center items-center -mx-3 mb-2 mt-4">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-state"
+            >
+              Seller Type
+            </label>
+            <div className="relative">
+              <select
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state"
+              >
+                <option>Individual</option>
+                <option>Not-Individual</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              for="grid-state"
+            >
+              Transmission Manual
+            </label>
+            <div className="relative">
+              <select
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state"
+              >
+                <option>Manual</option>
+                <option>Automatic</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default Form;

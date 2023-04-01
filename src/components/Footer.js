@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import car6 from "../assets/car6.jpeg";
+import car6 from "../assets/car6-removebg-preview.png";
 const Footer = () => {
   return (
     <div className="text-white font-body">
