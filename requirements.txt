@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+streamlit
+numpy
+Pillow
+keras~=2.6.0
+protobuf==3.19.4
+tensorflow~=2.6.0
+matplotlib
+opencv-python
+
