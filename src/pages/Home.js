@@ -1,16 +1,14 @@
 import React from "react";
 import Type from "../components/Type";
-import Form from "../components/Form.jsx";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <div>
       <Type />
-      <div style={{ paddingLeft: "250px", paddingRight: "250px" }}>
-        {" "}
-        <Form />
-        {/* wdx */}
-      </div>
+      <Hero />
+      <Footer />
     </div>
   );
 };

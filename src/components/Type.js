@@ -3,7 +3,7 @@ import car from "../assets/car-removebg-preview.png";
 import { Link } from "react-router-dom";
 function Type() {
   return (
-    <section className="bg-white dark:bg-gray-900 mt-16">
+    <section className="bg-white dark:bg-gray-900 mt-16 pt-8 font-body">
       <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="place-self-center mr-auto lg:col-span-7">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-3xl xl:text-4xl dark:text-white">
@@ -17,9 +17,9 @@ function Type() {
           </p>
           <Link
             to="/signup"
-            className="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            className="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-white rounded-lg bg-blue-700 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
-            Get started
+            Explore
             <svg
               className="ml-2 -mr-1 w-5 h-5"
               fill="currentColor"
@@ -33,12 +33,6 @@ function Type() {
               ></path>
             </svg>
           </Link>
-          <a
-            href="#"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-          >
-            Speak to Sales
-          </a>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex pl-24">
           <img src={car} alt="mockup" />
