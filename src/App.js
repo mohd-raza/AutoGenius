@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Prediction from "./pages/Prediction";
+import Analytics from "./pages/Analytics";
 function App() {
   return (
     <div className="App">
@@ -15,9 +16,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/prediction" element={<Prediction />} />
-          <Route path="/analytics" element={<Home />} />
+          <Route path="/analytics" element={<Analytics />} />
           <Route path="/comparing" element={<Home />} />
-          <Route path="/feed" element={<Home />} />
+          <Route path="/car-finder" element={<Home />} />
         </Routes>
       </Router>
     </div>

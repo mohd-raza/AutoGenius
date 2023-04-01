@@ -1,6 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const Form = () => {
+  const [name, setName] = useState("");
+  const [year, setYear] = useState("");
+  const [price, setPrice] = useState("");
+  const [km, setKm] = useState("");
+  const [owner, setOwner] = useState(1);
+  const [fuel, setFuel] = useState("");
+  const [seller, setSeller] = useState("");
+  const [transmission, setTransmission] = useState("");
+  const [answer, setAnswer] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, year, price, km, owner, fuel, seller, transmission);
+  };
+  function makeApiCall() {
+    const data = new FormData();
+    data.append("Year", year);
+    data.append("Present_Price", price);
+    data.append("Owner", owner);
+    data.append("Fuel_Type_Petrol", fuel);
+    data.append("Seller_Type_Individual", seller);
+    data.append("Kms_Driven", km);
+    data.append("Transmission_Mannual", transmission);
+    console.log(name, year, price, km, owner, fuel, seller, transmission);
+    const config = {
+      method: "post",
+      url: "http://127.0.0.1:8000/mlmodel/newsapi/",
+      headers: { "Content-Type": " application/json" },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setAnswer(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   return (
     <div className="flex flex-col justify-center items-center font-body mt-12 pb-12">
       <h1 className="text-white text-2xl mb-6">Enter Your Car Details</h1>
@@ -32,6 +74,9 @@ const Form = () => {
               id="grid-last-name"
               type="number"
               placeholder="2010.."
+              onChange={(e) => {
+                setYear(e.target.value);
+              }}
             />
           </div>
         </div>
@@ -49,6 +94,9 @@ const Form = () => {
               id="grid-first-name"
               type="number"
               placeholder="1.00"
+              onChange={(e) => {
+                setPrice(e.target.value);
+              }}
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -63,6 +111,9 @@ const Form = () => {
               id="grid-last-name"
               type="number"
               placeholder="5000.."
+              onChange={(e) => {
+                setKm(e.target.value);
+              }}
             />
           </div>
         </div>
@@ -79,6 +130,10 @@ const Form = () => {
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
+                value={owner}
+                onChange={(e) => {
+                  setOwner(e.target.value);
+                }}
               >
                 <option>1</option>
                 <option>2</option>
@@ -106,6 +161,10 @@ const Form = () => {
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
+                value={fuel}
+                onChange={(e) => {
+                  setFuel(e.target.value);
+                }}
               >
                 <option>Petrol</option>
                 <option>Diesel</option>
@@ -135,9 +194,13 @@ const Form = () => {
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
+                value={seller}
+                onChange={(e) => {
+                  setSeller(e.target.value);
+                }}
               >
                 <option>Individual</option>
-                <option>Not-Individual</option>
+                <option>Not Individual</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -161,6 +224,10 @@ const Form = () => {
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
+                value={transmission}
+                onChange={(e) => {
+                  setTransmission(e.target.value);
+                }}
               >
                 <option>Manual</option>
                 <option>Automatic</option>
@@ -178,6 +245,18 @@ const Form = () => {
           </div>
         </div>
       </form>
+      <div>
+        <button
+          type="button"
+          class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+          onClick={makeApiCall}
+        >
+          Predict
+        </button>
+      </div>
+      <div>
+        {answer ? <h1 className="text-white text-2xl">{answer}</h1> : ""}
+      </div>
     </div>
   );
 };

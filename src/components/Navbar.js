@@ -9,13 +9,15 @@ const Navbar = () => {
             <h1 className="font-title text-white text-4xl">AutoGenius</h1>
           </Link>
           <div className="flex md:order-2 font-body">
-            <Link to="/signup">
+            <Link to="/login">
               <button
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 xl:mr-8"
               >
                 Login
               </button>
+            </Link>
+            <Link to="/signup">
               <button
                 type="button"
                 className="text-black bg-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hover:text-white"

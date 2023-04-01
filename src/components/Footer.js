@@ -198,6 +198,15 @@ const Footer = () => {
                         Comparing Prices
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="/car-finder"
+                        href="#"
+                        className="text-white transition hover:opacity-75"
+                      >
+                        Car Finder
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
               </div>
