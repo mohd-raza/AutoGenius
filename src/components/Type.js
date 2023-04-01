@@ -1,5 +1,6 @@
 import React from "react";
 import car from "../assets/car-removebg-preview.png";
+import { Link } from "react-router-dom";
 function Type() {
   return (
     <section className="bg-white dark:bg-gray-900 mt-16">
@@ -14,8 +15,8 @@ function Type() {
             budget, and needs. Revolutionizing the used car industry one
             recommendation at a time.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/signup"
             className="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
             Get started
@@ -31,7 +32,7 @@ function Type() {
                 clip-rule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
           <a
             href="#"
             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
