@@ -62,7 +62,7 @@ class newsapi(APIView):
 		    if output<0:
 		        return Response("Sorry you cannot sell this car")
 		    else:
-		        return Response("You can sell the Car at {} lakhs".format(output))
+		        return Response("You can sell the Car at an estimated price of {} lakhs".format(output))
 		else:
 		    return Response("This method is not allowed")
 
