@@ -1,0 +1,89 @@
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.toggle-button {
+    position: relative;
+    width: 74px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #d4d4d4;
+    transition: 0.4s ease all;
+    z-index: 1;
+}
+
+#button-1 .knobs:before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    width: 22px;
+    height: 22px;
+    background-color: #C00012;
+    border-radius: 50%;
+    transition: 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked+.knobs:before {
+    content: "";
+    left: 42px;
+    background-color: #C00012;
+}
+
+#button-1 .checkbox:checked~.layer {
+    background-color: #fcebeb;
+}
+
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+    transition: 0.4s ease all;
+}
+
+.avatar {
+    margin: auto;
+    height: 36rem;
+    width: 36rem;
+    background: #F2F2F2;
+    position: relative;
+    border-radius: 20px;
+}
+
+.avatar input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.avatar label {
+    background: transparent;
+    font-size: 20px;
+    top: 48%;
+    left: 38%;
+}
