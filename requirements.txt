@@ -8,4 +8,5 @@ protobuf
 tensorflow
 matplotlib
 opencv-python
+libgl1
 
