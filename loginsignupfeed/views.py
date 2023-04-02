@@ -4,6 +4,7 @@ from django.shortcuts import render
 import requests
 import pickle
 import numpy as np
+import pandas as pd
 import sklearn
 from django.http import JsonResponse
 from rest_framework.response import Response
@@ -13,7 +14,7 @@ from django.http import HttpResponse, JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
-
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -65,4 +66,47 @@ class newsapi(APIView):
 		        return Response("You can sell the Car at {} lakhs".format(output))
 		else:
 		    return Response("This method is not allowed")
+
+csv_path = os.path.join(BASE_DIR,'loginsignupfeed/Cleaned_Data.csv')
+df = pd.read_csv(csv_path)
+class carfinder(APIView):
+	def post(self,request):
+		
+		brand = request.data['Brand']
+		Transmission = request.data['Transmission']
+		fuel = request.data['Fuel']
+		year = request.data['Year']
+		owner_type = request.data['owner_type']
+		seats = int(request.data['seats'])
+		filter_data = df.loc[(df['Brand']==brand)| (df['Year']==year) | (df['Owner_Type'] ==owner_type) | (df['Seats']==seats) | (df['Fuel_Type']==fuel) | (df['Transmission']==Transmission)]
+		newdta = filter_data[:10]
+		print(newdta)
+		data = []
+		for i in range(10):
+			new_data = {'name':newdta['Name'][i],'location':newdta['Location'][i],'price':newdta['Price'][i],'Year':newdta['Year'][i]}
+			data.append(new_data)
+		return Response(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

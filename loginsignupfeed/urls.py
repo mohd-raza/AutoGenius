@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
 	path('newsapi/',views.newsapi.as_view(),name='newsapi'),
+	path('carfinder',views.carfinder.as_view(),name='carfinder'),
 ]
