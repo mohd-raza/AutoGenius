@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+streamlit
+numpy
+Pillow
+keras
+protobuf
+tensorflow
+matplotlib
+seaborn
