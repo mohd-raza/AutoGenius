@@ -127,7 +127,7 @@ const Questions = () => {
           {/*  */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               for="grid-first-name"
             >
               Year of Car requiered?
@@ -147,7 +147,7 @@ const Questions = () => {
         <div className="flex flex-wrap justify-center items-center -mx-3 mb-2">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               for="grid-state"
             >
               Which Owner Type required?
@@ -178,7 +178,7 @@ const Questions = () => {
           </div>
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               for="grid-state"
             >
               How many number of Seats required?
