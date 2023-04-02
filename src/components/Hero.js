@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col">
             <div className="flex flex-wrap sm:flex-row flex-col py-6 mb-12 justify-center items-center">
-              <h1 className="sm:w-2/5 text-white font-medium title-font text-2xl sm:mb-0 mt-[-7rem]">
+              <h1 className="sm:w-2/5 text-white font-medium title-font text-3xl sm:mb-0 mt-[-7rem]">
                 Where Do We Stand Apart?
               </h1>
               <p className="text-white font-semibold text-xl">
