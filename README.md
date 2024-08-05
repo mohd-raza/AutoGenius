@@ -60,11 +60,7 @@ Price - Numeric
 
 
 
+Mohammed Raza: https://github.com/mohd-raza
 Yash Joshi: https://github.com/joshiyash05
- 
-Naman Lakhani:https://github.com/namanlakhani33
 
-Ishika Jain: https://github.com/ishika0103
-
-Mohammed Raza:https://github.com/mohd-raza
 
